@@ -27,8 +27,54 @@
 | git push [remote] [branch]  | 上传本次指定分支到远程仓库 |
 | git push [remote] —force  | 强行推送当前分支到远程仓库，即使有冲突 |
 | git reset —hard [commit]  | 重置当前分支的指针为commit，同时重置暂存区与工作区，与指定commit一致 |
+| git revert [commit]  | 回滚某次提交 |
 
 ```javascript
   git tag -a v2.1.18 -m '6月底合并前tag'  
   git push origin --tags
 ```
+
+git revert commitID 回滚某次提交
+
+### 缩写
+-d
+--delete：删除
+
+-D
+--delete --force的快捷键
+
+-f
+--force：强制
+
+-m
+--move：移动或重命名
+
+-M
+--move --force的快捷键
+
+-r
+--remote：远程
+
+-a
+--all：所有
+
+
+
+创建一个新仓库
+git clone http://192.168.0.199/web/233-news-collection-system.git
+cd 233-news-collection-system
+touch README.md
+git add README.md
+git commit -m "add README"
+
+推送现有文件夹
+cd existing_folder
+git init
+git remote add origin http://192.168.0.199/web/233-news-collection-system.git
+git add .
+git commit -m "Initial commit"
+
+推送现有的 Git 仓库
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin http://192.168.0.199/web/233-news-collection-system.git
